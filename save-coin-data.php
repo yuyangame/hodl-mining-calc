@@ -27,13 +27,24 @@
 	$ch3 = curl_init();
 	curl_setopt_array($ch3, array(
     	CURLOPT_RETURNTRANSFER => 1,
-    	CURLOPT_URL => 'http://www.tekyexplorer.xyz/hodl/api_fetch.php?method=getmininginfo',
+    	CURLOPT_URL => 'http://chainz.cryptoid.info/erc/api.dws?q=nethashps',
     	CURLOPT_USERAGENT => 'HodlCoin Miner'
 	));
 	
 	$resp3 = json_decode(curl_exec($ch3));
 
 	curl_close($ch3);
+
+	$ch4 = curl_init();
+	curl_setopt_array($ch4, array(
+    	CURLOPT_RETURNTRANSFER => 1,
+    	CURLOPT_URL => 'http://chainz.cryptoid.info/erc/api.dws?q=getblockcount',
+    	CURLOPT_USERAGENT => 'HodlCoin Miner'
+	));
+	
+	$resp4 = json_decode(curl_exec($ch4));
+
+	curl_close($ch4);
 
 	$exchangeHODLBTC = $resp1->hodl_btc->last;
 	$exchangeBTCUSD = $resp2->btc_usd->last;
