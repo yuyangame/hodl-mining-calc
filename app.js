@@ -18,8 +18,8 @@ function updateScenario() {
 
 	// get term deposits formula for interest and scenario section. 
 	// https://bitcointalk.org/index.php?topic=1317918.0
-    var blockTime = 154; // in seconds
-    var blocksPerDay = (24*60*60) / 154; // 561.038961
+    var blockTime = 300; // in seconds
+    var blocksPerDay = (24*60*60) / 300; // 561.038961
 
 	var principal;
 	var term;
